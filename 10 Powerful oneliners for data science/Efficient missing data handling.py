@@ -9,7 +9,10 @@ df = pd.DataFrame(
     }
 )
 
-cleaned_df = df.fillna(df.mean()).where(df.notnull(), df.fillna(method="ffill"))
+cleaned_df = df.bfill()
 
+print("Original DataFrame:")
 print(df)
+
+print("Cleaned DataFrame:")
 print(cleaned_df)
